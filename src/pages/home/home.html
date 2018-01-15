@@ -1,0 +1,43 @@
+<div class="fondo-login">
+  <div align="center" class="box-login">
+    <form (ngSubmit)="login()" class="form-login">
+      <div>
+        <div class="box-logo">
+          <img src="../../assets/imgs/logo-dark.png">
+        </div>
+        <div class="padding-content">
+          <input class="input-hide" type="text" placeholder="Email" [(ngModel)]="home.email" name="email">
+        </div>
+        <div class="padding-content">
+          <input class="input-hide" type="password" placeholder="Contraseña" [(ngModel)]="home.password" name="password">
+        </div>
+      </div>
+      <div align="center">
+        <button class="btn-login" type="submit" block>Iniciar Sesión</button>
+      </div>
+    </form>
+  </div>
+  <div align="center" class="box-register">
+    <h3>No tienes cuenta? Registrate Ya.</h3>
+    <form (ngSubmit)="register()" class="form-login">
+      <div>
+        <div class="padding-content">
+          <input type="text" placeholder="Nombres" [(ngModel)]="reg.first_name" name="first_name" class="input-hide">
+        </div>
+        <div class="padding-content">
+          <input type="text" placeholder="Apellidos" [(ngModel)]="reg.last_name" name="last_name" class="input-hide">
+        </div>
+        <div class="padding-content">
+          <input type="email" placeholder="Email" [(ngModel)]="reg.email" name="email" class="input-hide">
+          <input type="text" [(ngModel)]="reg.d0ntf1llth1s1n" name="d0ntf1llth1s1n" value=" " class="input-hide" style="display:none">
+        </div>
+        <div class="padding-content">
+          <input type="password" placeholder="Contraseña" [(ngModel)]="reg.password" name="password" class="input-hide">
+        </div>
+        <div class="padding-content">
+          <button class="btn-login">Registrarse</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
