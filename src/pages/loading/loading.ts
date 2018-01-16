@@ -12,7 +12,6 @@ import { HomePage } from "../home/home";
 })
 export class LoadingPage {
 
-  public user_id: any = "";
   public val: any = "";
 
   constructor(
@@ -22,19 +21,18 @@ export class LoadingPage {
   ) {
   }
 
-  ionViewDidLoad() {    
+  ionViewDidLoad() {   
     this.storage.get('user_id').then((val) => {
-      this.user_id = val;
+      if (val == null) {
+        setTimeout(() => {
+          this.navCtrl.push(HomePage);
+        }, 3000);
+      } else {
+        setTimeout(() => {
+          this.navCtrl.push(PerfilPage);
+        }, 3000);
+      }
     });
-    if (this.user_id != null) {
-      setTimeout(() => {
-        this.navCtrl.push(HomePage);
-      }, 3000);
-    } else {
-      setTimeout(() => {
-        this.navCtrl.push(PerfilPage);
-      }, 3000);
-    }
   }
 
 }

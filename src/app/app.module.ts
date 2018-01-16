@@ -11,6 +11,7 @@ import { PerfilPage } from '../pages/perfil/perfil';
 import { LoadingPage } from '../pages/loading/loading';
 import { UserServiceProvider } from '../providers/user-service/user-service';
 import { IonicStorageModule } from '@ionic/storage';
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
 
 
 @NgModule({
@@ -24,7 +25,7 @@ import { IonicStorageModule } from '@ionic/storage';
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -36,8 +37,9 @@ import { IonicStorageModule } from '@ionic/storage';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    UserServiceProvider
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    UserServiceProvider,
+    ScreenOrientation
   ]
 })
-export class AppModule {}
+export class AppModule { }
