@@ -14,3 +14,191 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+.top-20{
+    margin-top: 20px;
+}
+.top-30{
+    margin-top: 30px;
+}
+.top-40{
+    margin-top: 40px;
+}
+.top-50{
+    margin-top: 50px;
+}
+.top-60{
+    margin-top: 60px;
+}
+.top-70{
+    margin-top: 70px;
+}
+.top-80{
+    margin-top: 80px;
+}
+.top-90{
+    margin-top: 90px;
+}
+.top-100{
+    margin-top: 100px;
+}
+.top-porcent-20{
+    margin-top: 20%;
+}
+.top-porcent-30{
+    margin-top: 30%;
+}
+.top-porcent-40{
+    margin-top: 40%;
+}
+.top-porcent-50{
+    margin-top: 50%;
+}
+.top-porcent-60{
+    margin-top: 60%;
+}
+.top-porcent-70{
+    margin-top: 70%;
+}
+.top-porcent-80{
+    margin-top: 80%;
+}
+.top-porcent-90{
+    margin-top: 90%;
+}
+.top-porcent-100{
+    margin-top: 100%;
+}
+.ts-icon{
+    font-size: 30px;
+}
+.ts-text{
+    color: white;
+    text-decoration: none; 
+    vertical-align: middle;  
+}
+
+.input-hide{       
+    width: 100%;
+    padding: 10px;     
+    border: solid;
+    border-width: 1px;
+    border-radius: 3px;  
+    margin-bottom: -12px; 
+}        
+.padding-content{
+    padding: 10px;
+}   
+.btn-login{
+    background-color: #1ABC9C;
+    padding: 10px;
+    width: 100%;
+    color: white;
+}
+.container-centered{
+    margin-top: 15%;
+}
+.icons-login{
+    font-size: 30px !important;
+    color: white;
+}
+.color-white{
+    color: white !important;
+}
+.color-orange{
+    color: orange !important;
+}
+.form-width{
+    width: 90%;
+}
+.fondo-app{
+    background-color: #F5F5F5;
+    height: 100%;
+    overflow: scroll
+}
+
+.fondo-app::-webkit-scrollbar {
+    border:none;
+    width:0;
+    background: rgba(0,0,0,0);
+  }
+   
+.fondo-app::-webkit-scrollbar-track {
+    border:none;
+    width:0;
+    background: rgba(0,0,0,0);
+}
+   
+.fondo-app::-webkit-scrollbar-thumb {
+    border:none;
+    width:0;
+    background: rgba(0,0,0,0);
+}
+.toolbar-background{
+    background-color: rgb(26, 188, 156);
+    width: 100%;    
+}
+.icon-back{
+    font-size: 40px !important;
+}
+.message-validation{
+    margin-top: 20px;
+    background-color: orange;
+}
+.map{
+    width: 100%;
+    height: 150px !important;
+}
+.box-content{
+    background-color: white;
+    width: 80%;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+.toolbar-ios ion-title{
+    padding: unset !important;
+    margin-left: 10px !important;
+    width: auto !important;
+}
+
+ion-alert {
+    &.alert-warning {
+        .alert-head {
+            background-color: red;
+            color: #fff;
+        }
+        .alert-message{
+            display: none;
+        }
+        .alert-sub-title{
+            color: white;
+            margin-bottom: 0px;
+        }
+    }    
+    &.alert-danger {
+        .alert-head {
+            background-color: orange;
+            color: #fff;
+        }
+        .alert-message{
+            display: none;
+        }
+        .alert-sub-title{
+            color: white;
+            margin-bottom: 0px;
+        }
+    }
+    &.alert-success {
+        .alert-head {
+            background-color: #1abc9c;
+            color: #fff;
+        }
+        .alert-message{
+            display: none;
+        }
+        .alert-sub-title{
+            color: white;
+            margin-bottom: 0px;
+        }
+    }
+
+}

@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController, LoadingController, Platform } from 'ionic-angular';
-import { NavParams } from 'ionic-angular';
-import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { NavController, AlertController, LoadingController, Platform, ToastController, NavParams, ViewController } from 'ionic-angular';
 import { UserServiceProvider } from '../../providers/user-service/user-service';
 import { Storage } from '@ionic/storage';
 import { PerfilPage } from "../perfil/perfil";
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
+import { Network } from '@ionic-native/network';
+import { RegisterPage } from '../register/register';
+import { ResetPasswordPage } from '../reset-password/reset-password';
+import { ContactsPage } from '../contacts/contacts';
+import { InformationPage } from '../information/information';
+
 
 
 
@@ -21,7 +25,12 @@ export class HomePage {
   public user_id: any = "";
 
   home = {};
-  reg = {};
+
+  public loader = this.loadingCtrl.create({
+    content: "",
+    spinner: 'dots',
+    dismissOnPageChange: true
+  });
 
   constructor(
     public navCtrl: NavController,
@@ -31,16 +40,53 @@ export class HomePage {
     private storage: Storage,
     public loadingCtrl: LoadingController,
     private screenOrientation: ScreenOrientation,
-    private platform: Platform
+    private platform: Platform,
+    private network: Network,
+    private toastCtrl: ToastController,
+    private viewCtrl: ViewController
   ) { }
+
+  displayNetworkUpdate(connectionState: string) {
+    let networkType = this.network.type;
+    this.toastCtrl.create({
+      message: `You are now ${connectionState} via ${networkType}`,
+      duration: 3000
+    }).present();
+  }
+
+  ionViewWillEnter() {
+    this.viewCtrl.showBackButton(false);
+    this.network.onConnect().subscribe(data => {
+      console.log(data)
+      this.displayNetworkUpdate(data.type);
+    }, error => console.error(error));
+
+    this.network.onDisconnect().subscribe(data => {
+      console.log(data)
+      this.displayNetworkUpdate(data.type);
+    }, error => console.error(error));
+  }
+
+  ionViewDidEnter() {
+    this.network.onConnect().subscribe(data => {
+      console.log(data)
+      this.displayNetworkUpdate(data.type);
+    }, error => console.error(error));
+
+    this.network.onDisconnect().subscribe(data => {
+      console.log(data)
+      this.displayNetworkUpdate(data.type);
+    }, error => console.error(error));
+  }
 
   ionViewDidLoad() {
     if (this.platform.is('cordova')) {
-      this.screenOrientation.lock('landscape');
+      this.screenOrientation.lock('portrait');
     }
   }
 
   login() {
+    this.loader.present();
     this.userService.restLogin(this.home).then((result) => {
       if (result) {
         if (result["status"]) {
@@ -63,7 +109,6 @@ export class HomePage {
           });
           alert.present();
         }
-
       }
     }, (err) => {
       console.log(err);
@@ -71,20 +116,15 @@ export class HomePage {
   }
 
   register() {
-    this.userService.restRegister(this.reg).then((result) => {
-      if (result) {
-        let resiterAlert = this.alertCtrl.create({
-          title: 'Su registro fue exitoso',
-          subTitle: 'Ahora puedes ingresar en nuestra aplicacion',
-          buttons: ['Cerrar'],
-          cssClass: 'alert-success'
-        });
-        resiterAlert.present();
-        this.navCtrl.push(HomePage);
-      }
-    }, (err) => {
-      console.log(err);
-    });
+    this.navCtrl.setRoot(RegisterPage);
   }
-
+  reset_pass() {
+    this.navCtrl.setRoot(ResetPasswordPage);
+  }
+  contact() {
+    this.navCtrl.setRoot(ContactsPage);
+  }
+  information() {
+    this.navCtrl.setRoot(InformationPage);
+  }
 }

@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <span class="fa fa-arrow-left color-white icon-back" (click)="cancel()"></span>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<div class="fondo-app">
+  <div align="center" class="box-register">
+    <div class="div-panel top-porcent-40">
+      <h3>No tienes cuenta? Registrate Ya.</h3>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm.value)" class="form-width">
+        <div>
+          <div class="padding-content">
+            <input type="text" placeholder="Nombres" formControlName="first_name" class="input-hide">
+            <ion-item class="message-validation" *ngIf="registerForm.controls.first_name.hasError('required') && registerForm.controls.first_name.touched">
+              <p class="color-white">El campo nombres es requerido!</p>
+            </ion-item>
+          </div>
+          <div class="padding-content">
+            <input type="text" placeholder="Apellidos" formControlName="last_name" class="input-hide">
+            <ion-item class="message-validation" *ngIf="registerForm.controls.last_name.hasError('required') && registerForm.controls.last_name.touched">
+              <p class="color-white">El campo apellidos es requerido!</p>
+            </ion-item>
+          </div>
+          <div class="padding-content">
+            <input ype="email" placeholder="Email" formControlName="email" class="input-hide">
+            <ion-item class="message-validation" *ngIf="registerForm.controls.email.hasError('required') && registerForm.controls.email.touched">
+              <p class="color-white">El campo email es requerido!</p>
+            </ion-item>
+            <ion-item class="message-validation" *ngIf="registerForm.controls.email.hasError('pattern') && registerForm.controls.email.touched">
+              <p class="color-white">Este email no es valido</p>
+            </ion-item>
+          </div>
+          <div class="padding-content">
+            <input type="password" placeholder="Contraseña" formControlName="password" class="input-hide">
+            <ion-item class="message-validation" *ngIf="registerForm.controls.password.hasError('required') && registerForm.controls.password.touched">
+              <p class="color-white">El campo contraseña es requerido!</p>
+            </ion-item>
+          </div>
+          <div class="padding-content">
+            <ion-grid>
+              <ion-row>
+                <ion-col col-12>
+                  <button type="submit" [disabled]="!registerForm.valid" class="btn-login">Registrarse</button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

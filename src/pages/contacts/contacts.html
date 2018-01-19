@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <span class="fa fa-arrow-left color-white icon-back" (click)="cancel()"></span>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<div class="fondo-app">
+  <div align="center" class="box-contact">
+    <div class="div-panel top-porcent-40">
+      <h3>Contactenos</h3>
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm.value)" class="form-width">
+        <div>
+          <div class="padding-content">
+            <input type="text" placeholder="Nombres y Apellidos" formControlName="nombres" class="input-hide">
+            <ion-item class="message-validation" *ngIf="contactForm.controls.nombres.hasError('required') && contactForm.controls.nombres.touched">
+              <p class="color-white">El campo nombres y apellidos es requerido!</p>
+            </ion-item>
+          </div>
+          <div class="padding-content">
+            <input type="text" placeholder="Asunto" formControlName="asunto" class="input-hide">
+            <ion-item class="message-validation" *ngIf="contactForm.controls.asunto.hasError('required') && contactForm.controls.asunto.touched">
+              <p class="color-white">El campo asunto es requerido!</p>
+            </ion-item>
+          </div>
+          <div class="padding-content">
+            <input ype="email" placeholder="Email" formControlName="email" class="input-hide">
+            <ion-item class="message-validation" *ngIf="contactForm.controls.email.hasError('required') && contactForm.controls.email.touched">
+              <p class="color-white">El campo email es requerido!</p>
+            </ion-item>
+            <ion-item class="message-validation" *ngIf="contactForm.controls.email.hasError('pattern') && contactForm.controls.email.touched">
+              <p class="color-white">Este email no es valido</p>
+            </ion-item>
+          </div>
+          <div class="padding-content">
+            <textarea type="text" placeholder="Mensaje" formControlName="mensaje" class="input-hide"></textarea>
+            <ion-item class="message-validation" *ngIf="contactForm.controls.mensaje.hasError('required') && contactForm.controls.mensaje.touched">
+              <p class="color-white">El campo mensaje es requerido!</p>
+            </ion-item>
+          </div>
+          <div class="padding-content">
+            <ion-grid>
+              <ion-row>
+                <ion-col col-12>
+                  <button type="submit" [disabled]="!contactForm.valid" class="btn-login">Enviar</button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

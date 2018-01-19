@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 import { NavParams } from 'ionic-angular';
-import { UserServiceProvider } from '../../providers/user-service/user-service';
 import { Storage } from '@ionic/storage';
 import { PerfilPage } from "../perfil/perfil";
 import { HomePage } from "../home/home";
@@ -22,14 +21,15 @@ export class LoadingPage {
   }
 
   ionViewDidLoad() {   
+    this.storage.clear();
     this.storage.get('user_id').then((val) => {
       if (val == null) {
         setTimeout(() => {
-          this.navCtrl.push(HomePage);
+          this.navCtrl.setRoot(HomePage);
         }, 3000);
       } else {
         setTimeout(() => {
-          this.navCtrl.push(PerfilPage);
+          this.navCtrl.setRoot(PerfilPage);
         }, 3000);
       }
     });

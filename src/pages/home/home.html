@@ -1,10 +1,32 @@
-<div class="fondo-login">
-  <div align="center" class="box-login">
+<div align="center" class="box-login">
+  <div class="container-centered">
+    <div>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6>
+            <a href="#" class="ts-text">
+              <span class="ts-icon">
+                <i class="fa fa-facebook-official"></i>
+              </span>
+              <span class="ts-text">Facebook</span>
+            </a>
+          </ion-col>
+          <ion-col col-6>
+            <a href="#" class="ts-text">
+              <span class="ts-icon">
+                <i class="fa fa-twitter-square"></i>
+              </span>
+              <span class="ts-text">Twitter</span>
+            </a>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <div class="box-logo">
+      <img width="80%" src="./assets/imgs/logo-dark.png">
+    </div>
     <form (ngSubmit)="login()" class="form-login">
       <div>
-        <div class="box-logo">
-          <img src="../../assets/imgs/logo-dark.png">
-        </div>
         <div class="padding-content">
           <input class="input-hide" type="text" placeholder="Email" [(ngModel)]="home.email" name="email">
         </div>
@@ -12,32 +34,42 @@
           <input class="input-hide" type="password" placeholder="Contraseña" [(ngModel)]="home.password" name="password">
         </div>
       </div>
-      <div align="center">
-        <button class="btn-login" type="submit" block>Iniciar Sesión</button>
-      </div>
-    </form>
-  </div>
-  <div align="center" class="box-register">
-    <h3>No tienes cuenta? Registrate Ya.</h3>
-    <form (ngSubmit)="register()" class="form-login">
       <div>
-        <div class="padding-content">
-          <input type="text" placeholder="Nombres" [(ngModel)]="reg.first_name" name="first_name" class="input-hide">
-        </div>
-        <div class="padding-content">
-          <input type="text" placeholder="Apellidos" [(ngModel)]="reg.last_name" name="last_name" class="input-hide">
-        </div>
-        <div class="padding-content">
-          <input type="email" placeholder="Email" [(ngModel)]="reg.email" name="email" class="input-hide">
-          <input type="text" [(ngModel)]="reg.d0ntf1llth1s1n" name="d0ntf1llth1s1n" value=" " class="input-hide" style="display:none">
-        </div>
-        <div class="padding-content">
-          <input type="password" placeholder="Contraseña" [(ngModel)]="reg.password" name="password" class="input-hide">
-        </div>
-        <div class="padding-content">
-          <button class="btn-login">Registrarse</button>
-        </div>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-6>
+              <button class="btn-login" type="submit" block>Iniciar Sesión</button>
+            </ion-col>
+            <ion-col col-6>
+              <button class="btn-login" (click)="register()">Registrate</button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
       </div>
     </form>
+    <div class="top-40">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-4>
+            <div (click)="reset_pass()">
+              <span class="fa fa-lock icons-login"></span>
+              <p class="color-white">Recuperar Contraseña</p>
+            </div>
+          </ion-col>
+          <ion-col col-4>
+            <div (click)="contact()">
+              <span class="fa fa-users icons-login"></span>
+              <p class="color-white">Contactenos</p>
+            </div>
+          </ion-col>
+          <ion-col col-4>
+            <div (click)="information()">
+              <span class="fa fa-info-circle icons-login"></span>
+              <p class="color-white">Informacion de Contacto</p>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
   </div>
 </div>
