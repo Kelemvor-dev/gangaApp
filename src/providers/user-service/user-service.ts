@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class UserServiceProvider {
 
-  public apiUrl = 'http://localhost/gangaweb/';
+  apiUrl: any = 'http://localhost/gangaweb/';
 
   constructor(public http: HttpClient) {
 
@@ -40,7 +40,7 @@ export class UserServiceProvider {
           reject(err);
         });
     });
-  }  
+  }
 
   restResetpass(data) {
     return new Promise((resolve, reject) => {
@@ -53,14 +53,47 @@ export class UserServiceProvider {
           reject(err);
         });
     });
-  }  
+  }
 
-  restcontact(data){
+  restcontact(data) {
     return new Promise((resolve, reject) => {
       this.http.post(this.apiUrl + 'users/users/resetPassapp', data, {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       })
         .subscribe(res => {
+          resolve(res);
+        }, (err) => {
+          reject(err);
+        });
+    });
+  }
+
+  countNotifications(data) {
+    return new Promise((resolve, reject) => {
+      this.http.post(this.apiUrl + 'home/countNotifications', data , {
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      })
+        .subscribe(res => {
+          resolve(res);
+        }, (err) => {
+          reject(err);
+        });
+    });
+  }
+
+  bannerHome(){
+    return new Promise((resolve, reject) => {
+      this.http.get(this.apiUrl + 'home/bannerhomeApp').subscribe(res => {
+          resolve(res);
+        }, (err) => {
+          reject(err);
+        });
+    });
+  }
+
+  getPublicacions(){
+    return new Promise((resolve, reject) => {
+      this.http.get(this.apiUrl + 'home/getPublications').subscribe(res => {
           resolve(res);
         }, (err) => {
           reject(err);

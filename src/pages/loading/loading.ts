@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-import { PerfilPage } from "../perfil/perfil";
+import { InicioPage } from "../inicio/inicio";
 import { HomePage } from "../home/home";
 
 @Component({
@@ -21,7 +21,6 @@ export class LoadingPage {
   }
 
   ionViewDidLoad() {   
-    this.storage.clear();
     this.storage.get('user_id').then((val) => {
       if (val == null) {
         setTimeout(() => {
@@ -29,7 +28,7 @@ export class LoadingPage {
         }, 3000);
       } else {
         setTimeout(() => {
-          this.navCtrl.setRoot(PerfilPage);
+          this.navCtrl.setRoot(InicioPage);
         }, 3000);
       }
     });

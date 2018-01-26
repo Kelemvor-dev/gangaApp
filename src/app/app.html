@@ -1,1 +1,33 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="content">
+    <ion-header>
+        <ion-toolbar>
+            <ion-title class="title-menubar">
+                <span class="box-image-perfil-menu" style="float:right">
+                    <img src="{{imagen}}">
+                </span>
+                <span class="title-profile-name">{{first_name}}</span>
+            </ion-title>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+        <ion-list>
+            <button text-center ion-item>
+                <i class="fa fa-chevron-circle-down icon-menu-down" aria-hidden="true"></i>
+            </button>
+            <button class="subtitle-menubar" menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+                <i class="{{p.icon}} icon-menubar"></i> {{p.title}}
+            </button>
+        </ion-list>
+    </ion-content>
+    <ion-footer>
+        <ion-toolbar>
+            <ion-title menuClose (click)="logout()">
+                <i class="fa fa-power-off icon-menubar"></i> Cerrar Sesion</ion-title>
+        </ion-toolbar>
+    </ion-footer>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

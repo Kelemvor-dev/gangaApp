@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, AlertController, LoadingController, Platform, ToastController, NavParams, ViewController } from 'ionic-angular';
 import { UserServiceProvider } from '../../providers/user-service/user-service';
 import { Storage } from '@ionic/storage';
-import { PerfilPage } from "../perfil/perfil";
+import { InicioPage } from "../inicio/inicio";
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { Network } from '@ionic-native/network';
 import { RegisterPage } from '../register/register';
@@ -87,7 +87,7 @@ export class HomePage {
 
   login() {
     this.loader.present();
-    this.userService.restLogin(this.home).then((result) => {
+    this.userService.restLogin(this.home).then((result) => {      
       if (result) {
         if (result["status"]) {
           this.storage.clear();
@@ -99,7 +99,8 @@ export class HomePage {
           this.storage.set('email', result["data"]['email']);
           this.storage.set('documento_de_identidad', result["data"]['documento_de_identidad']);
           this.storage.set('phone', result["data"]['phone']);
-          this.navCtrl.push(PerfilPage);
+          this.storage.set('imagen', result["data"]['imagen']);          
+          this.navCtrl.setRoot(InicioPage);
         } else {
           let alert = this.alertCtrl.create({
             title: '!Upss¡',

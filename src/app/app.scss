@@ -41,6 +41,9 @@
 .top-100{
     margin-top: 100px;
 }
+.top-porcent-10{
+    margin-top: 10%;
+}
 .top-porcent-20{
     margin-top: 20%;
 }
@@ -154,12 +157,140 @@
     padding: 20px;
     margin-bottom: 30px;
 }
+.box-white{
+    background-color: white;
+}
 .toolbar-ios ion-title{
     padding: unset !important;
-    margin-left: 10px !important;
-    width: auto !important;
+    margin-left: -10px !important;
+    width: 100% !important;
+    color: white !important;
 }
-
+.vertical-middle{
+    vertical-align: middle;
+}
+.icon-perfil{
+    font-size: 40px !important;
+    color: rgb(255, 255, 255);
+}
+.box-menu{
+    background-color: rgb(26, 188, 156);
+    padding-top: 20px;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    height: 100px;
+    border-radius: 5px;
+}
+.box-menu:active{
+    background-color: #757575 !important;     
+    color: white;    
+}
+.span-title-menu{
+    margin: 0px;
+    margin-top: 10px;
+    font-size: 15px;
+}
+.box-count-notitify{
+    position: absolute;
+    font-size: 12px;
+    background-color: red;
+    padding: 6px;
+    border-radius: 18px;
+    width: 25px;
+    height: 25px;
+    margin-top: -14px;
+    margin-left: -8px;
+}
+.box-image-perfil{
+    width: 120px;
+    height: 120px;
+    border: solid;
+    overflow: hidden;
+    border-radius: 72px;
+    border-color: rgb(226, 226, 226);
+    border-width: 4px;
+    padding: 0px;
+}
+.box-image-perfil-menu{
+    width: 44px !important;
+    height: 44px !important;
+    border: none;
+    overflow: hidden;
+    border-radius: 72px;
+    border-color: rgb(226, 226, 226);
+    border-width: 4px;
+    padding: 0px;
+}
+.toolbar-title-md{
+    color: white !important;
+} 
+.title-menubar .toolbar-title-md{
+    font-size: 15px !important;    
+}
+.bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default{
+    color: white !important;
+}
+.scroll-content{
+    background-color: rgb(245, 245, 245);
+    overflow-y:hidden;
+}
+.subtitle-menubar{
+    text-align: left;
+    background-color: rgb(26, 188, 156);
+    color: white;
+}
+.subtitle-menubar:active{    
+    background-color: #757575;
+}
+.icon-menubar{
+    font-size: 20px !important;
+    padding-right: 10px;
+}
+ion-footer .toolbar-title-md{
+    font-size: 17px !important;  
+    text-align: center; 
+}
+.toolbar-title-ios{
+    color: white;
+    font-size: 17px;
+    margin-top: 15px;
+}
+.bar-button-default-ios, .bar-button-default.bar-button-ios-default, .bar-button-clear-ios-default{
+    color: white !important;
+}
+.menu-footer{
+    color: white;
+    font-size: 28px !important;
+}
+.border-icon-left{
+    border-left: solid;
+    border-color: white;
+}
+.icon-menu-down{
+    font-size: 35px !important;
+    color: rgb(26, 188, 156) !important;
+    position: absolute !important;
+    margin-top: -17px !important;
+    margin-left: -5% !important;
+}
+.title-profile-name{
+    float: right;
+    margin-top: 14px;
+    margin-right: 12px;
+    font-size: 16px;
+}
+.item-inner{
+    background: none !important;
+}
+.footer-ios{
+    height: 56px;
+    background-color: #1abc9c;    
+}
+.swiper-container{
+    height: 205px !important;
+    overflow: hidden !important;
+}
 ion-alert {
     &.alert-warning {
         .alert-head {
@@ -189,7 +320,7 @@ ion-alert {
     }
     &.alert-success {
         .alert-head {
-            background-color: #1abc9c;
+            background-color: rgb(26, 188, 156);
             color: #fff;
         }
         .alert-message{
