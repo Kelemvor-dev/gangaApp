@@ -19,7 +19,7 @@ export class MyApp {
   last_name: any;
   imagen: any;
 
-  constructor(    
+  constructor(
     public platform: Platform,
     public statusBar: StatusBar,
     public splashScreen: SplashScreen,
@@ -30,10 +30,10 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Categorias', component: PerfilPage, icon: 'fa fa-clone' },  
-      { title: 'Mis publicaciones', component: PerfilPage, icon: 'fa fa-list' },          
-      { title: 'Preguntas Frecuentes', component: PerfilPage, icon: 'fa fa-question-circle-o' }, 
-      { title: 'Contactenos', component: PerfilPage, icon: 'fa fa-users' },     
+      { title: 'Categorias', component: PerfilPage, icon: 'fa fa-clone' },
+      { title: 'Mis publicaciones', component: PerfilPage, icon: 'fa fa-list' },
+      { title: 'Preguntas Frecuentes', component: PerfilPage, icon: 'fa fa-question-circle-o' },
+      { title: 'Contactenos', component: PerfilPage, icon: 'fa fa-users' },
     ];
   }
 
@@ -46,13 +46,15 @@ export class MyApp {
     });
 
     this.storage.get('first_name').then((first_name_f) => {
-      this.first_name = first_name_f;      
+      this.first_name = first_name_f;
     });
     this.storage.get('last_name').then((last_name_f) => {
       this.last_name = last_name_f;
     });
     this.storage.get('imagen').then((imagen) => {
-      this.imagen = this.userService.apiUrl + "files/thumb/" + imagen;
+      if (imagen) {
+        this.imagen = this.userService.apiUrl + "files/thumb/" + imagen;
+      }
     });
   }
 

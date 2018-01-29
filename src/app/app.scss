@@ -288,8 +288,32 @@ ion-footer .toolbar-title-md{
     background-color: #1abc9c;    
 }
 .swiper-container{
-    height: 205px !important;
+    height: 177px !important;
     overflow: hidden !important;
+}
+.box-publications{
+    background-color: white;
+}
+.box-porcentaje-ganga{
+    text-align: center;
+    background-color: rgb(44, 188, 155);
+    padding: 5px;
+    margin-bottom: 0px;
+    color: white;
+}
+.title-publication{
+    font-size: 12px;
+    text-align: center;
+}
+.titles-app{
+    text-align: center;
+    color: #1abc9c;
+    border-bottom: solid;
+    border-color: #1abc9c;
+}
+.img-content{
+    height: 90px;
+    overflow: hidden;
 }
 ion-alert {
     &.alert-warning {
@@ -330,6 +354,6 @@ ion-alert {
             color: white;
             margin-bottom: 0px;
         }
-    }
+    } 
 
 }

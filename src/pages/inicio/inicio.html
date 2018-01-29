@@ -7,22 +7,27 @@
   </ion-navbar>
 </ion-header>
 <div class="fondo-app">
-  <div style="margin-top: 55px;">
+  <div style="margin-top: 46px;">
     <ion-slides *ngIf="keys && keys.length" autoplay="5000" loop="true" speed="5000">
       <ion-slide *ngFor="let key of keys">
         <img src="{{url}}{{banner[key].image}}">
       </ion-slide>
     </ion-slides>
   </div>
-  <div>
+  <h4 class="titles-app">Productos Destacados</h4>
+  <div class="columns" style="margin-bottom:40px;">
     <ion-grid>
       <ion-row>
         <ion-col *ngFor="let keypublic of keysPublications" col-6>
-            <img src="{{url}}{{publications[keypublic].file}}">
-            <p>{{publications[keypublic].title}}</p>
-            <p>Antes:<span>{{ (publications[keypublic].precio_real - publications[keypublic].precio_ganga) / (publications[keypublic].precio_real) * 100}}</span>% de ganga</p>
-                    
-        </ion-col>        
+          <div class="box-publications">
+            <div class="img-content">
+              <img src="{{url}}{{publications[keypublic].file}}">
+            </div>
+            <p class="title-publication">{{publications[keypublic].title}}</p>
+            <p class="box-porcentaje-ganga">
+              <span>{{ publications[keypublic].porcentaje }}</span>% de ganga</p>
+          </div>
+        </ion-col>
       </ion-row>
     </ion-grid>
   </div>

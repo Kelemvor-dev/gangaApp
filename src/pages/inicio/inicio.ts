@@ -57,7 +57,7 @@ export class InicioPage {
 
   slideChanged() {
     let currentIndex = this.slides.getActiveIndex();
-    if(currentIndex==3){
+    if (currentIndex == 3) {
       this.slides.stopAutoplay();
     }
   }

@@ -21,6 +21,7 @@ export class LoadingPage {
   }
 
   ionViewDidLoad() {   
+    
     this.storage.get('user_id').then((val) => {
       if (val == null) {
         setTimeout(() => {
