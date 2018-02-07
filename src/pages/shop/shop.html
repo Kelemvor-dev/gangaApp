@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Selecciona tu producto</ion-title>
+  </ion-navbar>
+</ion-header>
+<div class="fondo-app">
+  <ion-grid style="margin-top: 70px;margin-bottom: 50px;">
+    <h4 class="titles-app">Encuentra la mejor opcion</h4>
+    <ion-row class="fondo-product border-content-swiper" *ngFor="let key of keysproducts">
+      <ion-col col-7>
+        <div>
+          <p>{{products[key].title}}</p>
+          <div>{{products[key].text.substring(1,100)}}...</div>
+        </div>
+      </ion-col>
+      <ion-col col-5>
+        <ks-swiper-container opciones[products[key].id]>
+          <ng-container *ngFor="let keyimages of keyimages">
+            <ks-swiper-slide *ngIf="products[key].id == images[keyimages].publication_id">
+              <div class="contenedor-imagen-swiper">
+                <img width="100%" src="{{url}}{{images[keyimages].file}}">
+              </div>
+              <div class="swiper-pagination-{{products[key].id}}"></div>
+              <div class="swiper-button-next-{{products[key].id}}" style="display:none"></div>
+              <div class="swiper-button-prev-{{products[key].id}}" style="display:none"></div>
+            </ks-swiper-slide>
+          </ng-container>
+        </ks-swiper-container>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col align="center" class="border-icon-left" (click)="productsPage()">
+          <i class="fa fa-clone menu-footer" aria-hidden="true"></i>
+        </ion-col>
+        <ion-col align="center" class="border-icon-left" (click)="homePage()">
+          <i class="fa fa-home menu-footer" aria-hidden="true"></i>
+        </ion-col>
+        <ion-col align="center" class="border-icon-left" (click)="presentProfileModal()">
+          <i class="fa fa-bell menu-footer" aria-hidden="true">
+            <span class="box-count-notitify" *ngIf="notifications != 'vacio' else elseBlock">{{notifications}}</span>
+          </i>
+        </ion-col>
+        <ion-col align="center" class="border-icon-left border-icon-right" (click)="profilePage()">
+          <i class="fa fa-user menu-footer" aria-hidden="true"></i>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

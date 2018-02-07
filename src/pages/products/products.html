@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Productos</ion-title>
+  </ion-navbar>
+</ion-header>
+<div class="fondo-app">
+  <div style="margin-top: 70px;">
+    <div class="columns" style="margin-bottom:40px;">
+      <h4 class="titles-app">Selecciona tu categoria</h4>
+      <ion-grid>
+        <ion-row>
+          <ion-col *ngFor="let keycat of keysCategories" col-6>
+            <div class="box-publications">
+              <div class="animation-click" (click)="getSubcategories(categories[keycat].id)"></div>
+              <div class="img-content">
+                <img src="{{url}}{{categories[keycat].file}}">
+              </div>
+              <div class="box-porcentaje-ganga">{{categories[keycat].title}}</div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</div>
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col align="center" class="border-icon-left" (click)="productsPage()">
+          <i class="fa fa-clone menu-footer" aria-hidden="true"></i>
+        </ion-col>
+        <ion-col align="center" class="border-icon-left" (click)="homePage()">
+          <i class="fa fa-home menu-footer" aria-hidden="true"></i>
+        </ion-col>
+        <ion-col align="center" class="border-icon-left" (click)="presentProfileModal()">
+          <i class="fa fa-bell menu-footer" aria-hidden="true">
+            <span class="box-count-notitify" *ngIf="notifications != 'vacio' else elseBlock">{{notifications}}</span>
+          </i>
+        </ion-col>
+        <ion-col align="center" class="border-icon-left border-icon-right" (click)="profilePage()">
+          <i class="fa fa-user menu-footer" aria-hidden="true"></i>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

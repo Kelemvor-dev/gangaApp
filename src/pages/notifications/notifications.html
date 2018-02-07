@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Notificaciones
+      <i class="fa fa-times-circle icon-menu-rigth-heder" (click)="dismiss()"></i>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<div class="fondo-app">
+  <div style="margin-top: 70px;">
+    <ion-grid>
+      <ion-row>
+        <ion-col *ngFor="let key of keysNotify" col-12>
+          <div class="card-notify">
+              <i class="fa fa-check-circle buton-notification" role="button"></i>
+            {{notifications[key].message}}
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</div>

@@ -29,8 +29,7 @@ export class MyApp {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
-    this.pages = [
-      { title: 'Categorias', component: PerfilPage, icon: 'fa fa-clone' },
+    this.pages = [      
       { title: 'Mis publicaciones', component: PerfilPage, icon: 'fa fa-list' },
       { title: 'Preguntas Frecuentes', component: PerfilPage, icon: 'fa fa-question-circle-o' },
       { title: 'Contactenos', component: PerfilPage, icon: 'fa fa-users' },

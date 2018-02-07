@@ -36,13 +36,16 @@
   <ion-toolbar>
     <ion-grid>
       <ion-row>
-        <ion-col align="center">
-          <i class="fa fa-bell menu-footer" aria-hidden="true"></i>
+        <ion-col align="center" class="border-icon-left" (click)="productsPage()">
+          <i class="fa fa-clone menu-footer" aria-hidden="true"></i>
         </ion-col>
-        <ion-col align="center" class="border-icon-left">
+        <ion-col align="center" class="border-icon-left" (click)="homePage()">
           <i class="fa fa-home menu-footer" aria-hidden="true"></i>
         </ion-col>
-        <ion-col align="center" class="border-icon-left">
+        <ion-col align="center" class="border-icon-left" (click)="presentProfileModal()">
+          <i class="fa fa-bell menu-footer" aria-hidden="true"><span class="box-count-notitify" *ngIf="notifications != 'vacio' else elseBlock">{{notifications}}</span></i>
+        </ion-col>
+        <ion-col align="center" class="border-icon-left border-icon-right" (click)="profilePage()">
           <i class="fa fa-user menu-footer" aria-hidden="true"></i>
         </ion-col>
       </ion-row>

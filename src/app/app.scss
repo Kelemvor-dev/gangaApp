@@ -92,7 +92,7 @@
     padding: 10px;
 }   
 .btn-login{
-    background-color: #1ABC9C;
+    background-color: rgb(44, 188, 155);;
     padding: 10px;
     width: 100%;
     color: white;
@@ -261,11 +261,18 @@ ion-footer .toolbar-title-md{
 }
 .menu-footer{
     color: white;
-    font-size: 28px !important;
+    font-size: 25px !important;
+    margin-top: 4px;
 }
 .border-icon-left{
     border-left: solid;
-    border-color: white;
+    border-color: rgba(0, 0, 0, 0.2196078431372549);
+    border-width: 0.5px;
+}
+.border-icon-right{
+    border-right: solid;
+    border-color: rgba(0, 0, 0, 0.2196078431372549);
+    border-width: 0.5px;
 }
 .icon-menu-down{
     font-size: 35px !important;
@@ -285,14 +292,19 @@ ion-footer .toolbar-title-md{
 }
 .footer-ios{
     height: 56px;
-    background-color: #1abc9c;    
-}
-.swiper-container{
-    height: 177px !important;
-    overflow: hidden !important;
+    background-color: rgb(44, 188, 155);;    
 }
 .box-publications{
-    background-color: white;
+    background-color: white !important;
+}
+.animation-click{
+    background-color: #ffffff00;
+    position: absolute;
+    width: 95%;
+    height: 127px;
+}
+.animation-click:active{
+    background-color: rgba(44, 188, 155, 0.44) !important;
 }
 .box-porcentaje-ganga{
     text-align: center;
@@ -302,18 +314,46 @@ ion-footer .toolbar-title-md{
     color: white;
 }
 .title-publication{
-    font-size: 12px;
-    text-align: center;
+    font-size: 12px !important;
+    text-align: center !important;
 }
 .titles-app{
     text-align: center;
-    color: #1abc9c;
+    color: rgb(44, 188, 155);;
     border-bottom: solid;
-    border-color: #1abc9c;
+    border-color: rgb(44, 188, 155);;
 }
 .img-content{
-    height: 90px;
+    height: 100px;
     overflow: hidden;
+}
+.logo-background{
+    background-color: rgb(44, 188, 155);
+    padding: 10px;
+    border-bottom: solid;
+    border-top: solid;
+    border-color: white;
+    margin-top: 1px;
+}
+.icon-menu-rigth-heder{
+    float: right;
+    font-size: 24px !important;
+}
+.card-notify{
+    display: block;
+    padding: 13px;
+    background-color: #ffffff;
+    border: 1px solid rgb(44, 188, 155);
+    border-radius: 3px;
+    transition: border 0.2s ease-in-out;
+}
+.buton-notification {
+    font-size: 26px !important;
+    position: relative;
+    float: right;
+    margin-top: -9px;
+    margin-right: -7px;
+    color: rgb(44, 188, 155);;
 }
 ion-alert {
     &.alert-warning {

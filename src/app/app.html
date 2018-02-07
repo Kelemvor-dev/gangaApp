@@ -12,9 +12,9 @@
 
     <ion-content>
         <ion-list>
-            <button text-center ion-item>
-                <i class="fa fa-chevron-circle-down icon-menu-down" aria-hidden="true"></i>
-            </button>
+            <div class="logo-background" text-center>
+                <img width="112px" src="../assets/imgs/logo-dark.png">
+            </div>
             <button class="subtitle-menubar" menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
                 <i class="{{p.icon}} icon-menubar"></i> {{p.title}}
             </button>

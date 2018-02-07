@@ -14,6 +14,10 @@ import { ResetPasswordPage } from '../pages/reset-password/reset-password';
 import { ContactsPage } from '../pages/contacts/contacts';
 import { InformationPage } from '../pages/information/information';
 import { InicioPage } from '../pages/inicio/inicio';
+import { NotificationsPage } from '../pages/notifications/notifications';
+import { ProductsPage } from '../pages/products/products';
+import { SubcategoriesPage } from '../pages/subcategories/subcategories';
+import { ShopPage } from '../pages/shop/shop';
 //PROVIDERS
 import { UserServiceProvider } from '../providers/user-service/user-service';
 import { IonicStorageModule } from '@ionic/storage';
@@ -21,9 +25,7 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { Camera } from '@ionic-native/camera';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
-
-
+import { KSSwiperModule } from 'angular2-swiper';
 
 @NgModule({
   declarations: [
@@ -35,9 +37,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ResetPasswordPage,
     ContactsPage,
     InformationPage,
-    InicioPage
+    InicioPage,
+    NotificationsPage,
+    ProductsPage,
+    SubcategoriesPage,
+    ShopPage
   ],
   imports: [
+    KSSwiperModule,
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
@@ -53,7 +60,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ResetPasswordPage,
     ContactsPage,
     InformationPage,
-    InicioPage
+    InicioPage,
+    NotificationsPage,
+    ProductsPage,
+    SubcategoriesPage,
+    ShopPage
   ],
   providers: [
     StatusBar,
@@ -63,7 +74,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ScreenOrientation,
     Network,
     Camera,
-    GoogleMaps
+    GoogleMaps,
   ]
 })
 export class AppModule { }
